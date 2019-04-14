@@ -1,0 +1,163 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+% (c) 2011 Scott Clark <sc932@cornell.edu> http://cam.cornell.edu/~sc932
+% (c) 2011 Anton Dort-Golts <dortgolts@gmail.com> https://github.com/dgtony
+%
+
+%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{etoolbox}
+\robustify\cftdotfill
+
+%-----------------------------------------------------------
+%Edit these values as you see fit
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+
+%-----------------------------------------------------------
+%Margin setup
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{-0.25in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.75in}
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{8pt}
+  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
+    \begin{shaded}
+
+\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-5pt}
+}
+
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+
+%-----------------------------------------------------------
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+
+\textbf{{\Large Anton Dort-Golts}} & \textbf{\today} \\
+\texttt{dortgolts@gmail.com} & \texttt{https://github.com/dgtony} \\
+
+\end{tabular*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\resheading{Education}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+\item
+	\ressubheading{St.-Petersburg State University of Telecommunications}{St.-Petersburg, Russia}{Candidate of Sciences (Ph.D. equivalent) in Systems and Networks}{2011 - 2014}
+	\begin{itemize}
+		\resitem{Networks Department (Full Scholarship, 4 years)}
+		\resitem{Novel methods of traffic engineering, self-organized overlay networks, P2P communications, real-time traffic predictions and optimization}
+	\end{itemize}
+
+\item
+	\ressubheading{St.Petersburg State University of Telecommunications}{St.-Petersburg, Russia}{Engineering degree}{2003 - 2009}
+	\begin{itemize}
+		\resitem{Graduated Cum Laude in the field of networks and switching systems}
+	\end{itemize}
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\resheading{Research and Work Experience}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+\item
+	\ressubheading{IqOption Ltd.}{St.-Petersburg, Russia}{Senior Software Engineer}{August 2017 - current}
+	\begin{itemize}
+		\resitem{Co-developed risk management system for the trading platform. It's a highly responsive, high-load constellation of microservices responsible for the real-time trading decision-making, estimation of profits and losses and generating various analytic insights.}
+		\resitem{Analysis and implementation of risk and pricing models.}
+		\resitem{Works on optimizing code performance and ensuring high-availability of the system.}
+		\resitem{Created numerous infrastructural tools for the internal use.}
+	\end{itemize}
+
+\item
+	\ressubheading{Syncleo Ltd.}{St.-Petersburg, Russia}{Software Engineer}{April 2017 - August 2017}
+	\begin{itemize}
+		\resitem{Created transport subsystem for the smart appliances.}
+		\resitem{Developed HTTP-MQTT gateway service.}
+		\resitem{Created universal push notification service working with both APNs and FCM.}
+		\resitem{Enabled device voice control with both Alexa Custom Skill and API.AI.}
+		\resitem{Developed auxiliary internal services and tools.}
+	\end{itemize}
+
+\item 
+	\ressubheading{Ready for Sky Ltd.}{St.-Petersburg, Russia}{Software Engineer}{March 2016 - April 2017}
+	\begin{itemize}
+		\resitem{Software development in the field of IoT and remote control of smart things. Created core communication system (from architecture and protocols design to production), enabling communication of various types of smart appliances and mobile applications.}
+		\resitem{Developed Amazon Alexa skill enabling voice control of smart appliances.}
+		\resitem{Created a bunch of various internal services: logic, geolocation, monitoring etc.}
+	\end{itemize}
+
+\item 
+	\ressubheading{State University of Telecommunications, IoT research lab}{St.-Petersburg, Russia}{Assistant Professor}{September 2012 - February 2016}
+	\begin{itemize}
+		\resitem{Research in the field of self-organized networks, IoT and its applications.}
+		\resitem{Conducted teaching courses on mathematical methods and models for networks, mathematical methods of optimization and Python for scientific calculations and data analysis.}
+		\resitem{Lab activities: software development for IoT appliances, tools for timeseries analysis, special-purpose high-level flow-based network simulator etc.}
+	\end{itemize}
+
+\item
+	\ressubheading{Digiton Research Ltd.}{St.-Petersburg, Russia}{Software Engineer, Analyst}{April 2010 - February 2012}
+	\begin{itemize}
+		\resitem{Practical research and analysis in the field of multiprocessor grid-systems.}
+		\resitem{Software development of network services and traffic analysis tools.}
+	\end{itemize}
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\resheading{Skills}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+\item {\bf Tech Stack:} Go, Rust, Python, Haskell, Linux.
+
+\item {\bf Areas of interests:} Distributed systems, networks, protocols, P2P, overlays, IoT, fintech.
+
+\item {\bf Numerical Analysis and Computer Science:} Optimization, Queuing theory, Numerical simulations, Concurrent Programming, Distributed Systems, Data Structures.
+
+\item {\bf Exploring and implementing ideas:} problem solver, love to convert research papers into working solutions.
+
+\end{itemize}
+
+\end{document}
